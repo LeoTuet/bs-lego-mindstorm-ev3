@@ -1,7 +1,7 @@
 pipeline {
     agent any
     triggers {
-        githubPush overrideUrl: 'https://github.com/LeoTuet/LegoRoboEV3'
+        githubPush: 'https://github.com/LeoTuet/LegoRoboEV3'
     }
 
     stages {
