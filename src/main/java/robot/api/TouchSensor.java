@@ -3,7 +3,7 @@ package robot.api;
 import lejos.hardware.port.Port;
 import lejos.hardware.sensor.*;
 import lejos.robotics.SampleProvider;
-public class TastSensor {
+public class TouchSensor {
 
 
 		
@@ -22,15 +22,15 @@ public class TastSensor {
 		boolean sampleTouch (){
 			float[] sample = new float[sp.sampleSize()];
 			sp.fetchSample(sample, 0);
-			int druck = (int)(sample[0] );
-			boolean druck1;
-			if (druck==1){
-				druck1=true;
+			int touch = (int)(sample[0] );
+			boolean isTouched;
+			if (touch==1){
+				isTouched=true;
 			}
-			else {druck1=false;
+			else {isTouched=false;
 			}
 			
-			return (druck1);
+			return (isTouched);
 	    }
 		
 				

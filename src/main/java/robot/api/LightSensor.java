@@ -5,7 +5,7 @@ import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.hardware.sensor.SensorMode;
 
 
-public class LichtSensor {
+public class LightSensor {
 	EV3ColorSensor sensor;
 	SensorMode mode;
 	
