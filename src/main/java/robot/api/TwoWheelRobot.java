@@ -1,5 +1,7 @@
 package robot.api;
+
 import lejos.hardware.port.Port;
+
 public class TwoWheelRobot {
 	protected double speed;
 	protected EV3Brick brick;
