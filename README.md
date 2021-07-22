@@ -2,6 +2,10 @@
 IntelliJ Projekt Vorlage für die Aufgabe ’Abräumen’ mit dem Lego Roboter (für windows) in der städtischen Berufsschule für Informationstechnik
 - - -
 
+## Requirements
+- Java 7
+- Putty
+
 ## Setup
 - Projekt clonen und IntelliJ das Maven projekt laden lassen
 - in upload.bat und run.bat die IP-Adresse ändern
