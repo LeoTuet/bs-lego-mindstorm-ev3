@@ -5,7 +5,7 @@ import lejos.hardware.sensor.EV3UltrasonicSensor;
 import lejos.robotics.SampleProvider;
 
 
-public class UltraSchallSensor {
+public class UltrasoundSensor {
 	
 		private Port port;
 		private EV3UltrasonicSensor sensor;
