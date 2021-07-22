@@ -5,7 +5,13 @@ import robot.api.TwoWheelRobot;
 public class Main {
 
     public static void main(String[] args) {
-        reverseParking();
+        TwoWheelRobot robot = new TwoWheelRobot();
+        robot.driveSafely();
+
+    }
+
+    private static void sensorTest() {
+
     }
 
     private static void reverseParking() {

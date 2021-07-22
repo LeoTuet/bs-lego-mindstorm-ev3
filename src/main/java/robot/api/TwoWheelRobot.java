@@ -4,11 +4,19 @@ public class TwoWheelRobot {
 	protected double speed;
 	protected EV3Brick brick;
 	private Motor motA, motB;
-	private Port portA, portB;	
+	private Port portA, portB;
+
+	public LightSensor getLightSensor() {
+		return lightSensor;
+	}
+
+	private LightSensor lightSensor;
 
 	public TwoWheelRobot() {
 		brick = new EV3Brick();
 		motA = new Motor();	motB = new Motor();
+		lightSensor = new LightSensor();
+		lightSensor.connect(brick.getPort("S4"));
 		portA = brick.getPort("A"); portB = brick.getPort("B");
 		motA.connect(portA); motB.connect(portB);
 		speed = 0.5;
@@ -44,6 +52,14 @@ public class TwoWheelRobot {
 	public void drive(double sek) {
 		drive();
 		Helper.delayProgramm(sek);
+		brake();
+	}
+
+	public void driveSafely(){
+		while (this.getLightSensor().sampleLight() > 10){
+			drive();
+		}
+
 		brake();
 	}
 	
