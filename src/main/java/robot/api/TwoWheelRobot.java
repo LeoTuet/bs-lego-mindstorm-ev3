@@ -8,9 +8,12 @@ public class TwoWheelRobot {
 
 	public TwoWheelRobot() {
 		brick = new EV3Brick();
-		motA = new Motor();	motB = new Motor();
-		portA = brick.getPort("A"); portB = brick.getPort("B");
-		motA.connect(portA); motB.connect(portB);
+		motA = new Motor();
+		motB = new Motor();
+		portA = brick.getPort("A");
+		portB = brick.getPort("B");
+		motA.connect(portA);
+		motB.connect(portB);
 		speed = 0.5;
 	}
 	

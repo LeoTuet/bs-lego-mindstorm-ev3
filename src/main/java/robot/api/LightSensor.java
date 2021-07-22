@@ -18,12 +18,12 @@ public class LightSensor {
 	public int[] sampleLightArray() 
 	{
 		float[] sample = new float[1];
-		int []values= new int [10];
+		int []values = new int[10];
 		
-		for(int i=0;i<10; i++)
+		for(int i = 0; i < 10; i++)
 		{
 			mode.fetchSample(sample, 0);
-			values[i]=(int)(sample[0]*100+0.5);
+			values[i] = (int)(sample[0] * 100 + 0.5);
 		}
 		
 		return values;
@@ -34,10 +34,10 @@ public class LightSensor {
 		double lightvalue=0;
 		for(int a: sampleLightArray())
 		{
-			lightvalue= lightvalue+a;
+			lightvalue = lightvalue + a;
 		}
 		
-		return (int)(lightvalue/10 + 0.5);
+		return (int)(lightvalue / 10 + 0.5);
 	}
 	
 	public void closeLight() {
