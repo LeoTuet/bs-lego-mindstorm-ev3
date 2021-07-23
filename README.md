@@ -4,7 +4,6 @@ IntelliJ Projekt Vorlage für die Aufgabe ’Abräumen’ mit dem Lego Roboter (
 
 ## Requirements
 - Java 7
-- Putty
 
 ## Setup
 - Projekt clonen und IntelliJ das Maven projekt laden lassen
