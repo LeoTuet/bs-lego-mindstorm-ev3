@@ -18,7 +18,7 @@ IntelliJ Projekt Vorlage für die Aufgabe ’Abräumen’ mit dem Lego Roboter (
 2. Bei Passwortanfragen Enter eingeben
 3. warten
 
-### Bash Script
+### Bash Script (Build & Deploy)
 1. Run > Edit Configurations... > New Configuration > Shell Script
 2. Bei Script Path den Pfad zur start.sh angeben
 3. Before Launch > Add > Run Maven Goal
