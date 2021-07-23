@@ -4,3 +4,4 @@ printf "Uploading...\n"
 scp -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc target/$JAR root@$IP:/home/lejos/programs
 printf "Running...\n"
 ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc root@$IP "jrun -jar /home/lejos/programs/$JAR"
+printf "Done!\n"
