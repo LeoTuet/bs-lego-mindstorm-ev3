@@ -8,14 +8,23 @@ IntelliJ Projekt Vorlage für die Aufgabe ’Abräumen’ mit dem Lego Roboter (
 
 ## Setup
 - Projekt clonen und IntelliJ das Maven projekt laden lassen
-- in upload.bat und run.bat die IP-Adresse ändern
+- in ip.txt die IP-Adresse des Bots eingeben
 - Code ist unter src/main/java/robot/Main.java
 
 ## Deploy
+
+### Batchfiles
 1. Build > Build Artifacts > LegoRoboter.jar > Build
-2. upload.bat und root passwort eingeben
-3. run.bat und root passwort erneut eingeben
-4. warten
+2. Bei Passwortanfragen Enter eingeben
+3. warten
+
+### Bash Script
+1. Run > Edit Configurations... > New Configuration > Shell Script
+2. Bei Script Path den Pfad zur start.sh angeben
+3. Before Launch > Add > Run Maven Goal
+4. package bei Command Line eingeben
+5. Runnen und warten
+
 
 ## Die Regeln von Leo
 1. Niemand pushed auf main! (Außer Marc)

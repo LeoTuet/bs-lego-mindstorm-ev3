@@ -1,6 +1,6 @@
 @echo off
-set IP=10.96.210.44
+set /p IP=<ip.txt
 title Upload LegoRobo
 echo Uploading...
-pscp -P 22 -scp out/LegoRoboter.jar root@%IP%:/home/lejos/programs
+scp -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc out/LegoRoboter.jar root@%IP%:/home/lejos/programs
 pause
