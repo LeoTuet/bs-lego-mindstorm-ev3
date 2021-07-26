@@ -24,8 +24,11 @@ public class AutonomousRobot extends TwoWheelRobot {
     }
 
     public void driveSafelyDist(double cm) {
-        while (this.getLightSensor().sampleLight() > 10) {
-            drive(cm);
+        for(int i = 0; i < cm; i++){
+            if(this.getLightSensor().sampleLight() <= 10){
+                break;
+            }
+            driveDist(1);
         }
         brake();
     }
