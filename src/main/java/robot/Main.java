@@ -6,7 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         AutonomousRobot robot = new AutonomousRobot();
-        robot.driveSafely();
         robot.clearTable();
     }
 

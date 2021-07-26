@@ -51,17 +51,25 @@ public class AutonomousRobot extends TwoWheelRobot {
 
     public void clearTable() {
         while (true) {
-            if (endOfTableDetected()) {
-                brake();
-                turn('r', 10);
-            }
             if (obstacleDetected()) {
-                double tempSpeed = getSpeed();
-                setSpeed(3);
-                driveSafelyDist(ultrasoundSensor.sampleSonic());
-                setSpeed(tempSpeed);
+                ramObstacle();
+            } else {
+                searchObstacle();
             }
         }
+    }
+
+    private void searchObstacle() {
+        while (!obstacleDetected()){
+            turn('r', 3);
+        }
+    }
+
+    private void ramObstacle() {
+        double tempSpeed = getSpeed();
+        setSpeed(3);
+        driveSafelyDist(ultrasoundSensor.sampleSonic());
+        setSpeed(tempSpeed);
     }
 
     private boolean endOfTableDetected() {
