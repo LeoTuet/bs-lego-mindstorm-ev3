@@ -66,6 +66,12 @@ public class AutonomousRobot extends TwoWheelRobot {
         while (!obstacleDetected()){
             turn('r', 3);
         }
+        //adds personality
+        try {
+            Thread.sleep(1000 + (int)(Math.random() * 3000));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private void ramObstacle() {
