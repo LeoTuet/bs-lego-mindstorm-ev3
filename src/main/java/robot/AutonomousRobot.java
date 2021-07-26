@@ -70,5 +70,6 @@ public class AutonomousRobot extends TwoWheelRobot {
 
     private boolean obstacleDetected() {
         // TODO: 26.07.21 use ultrasound to detect if obstacle in front
+        return false;
     }
 }
