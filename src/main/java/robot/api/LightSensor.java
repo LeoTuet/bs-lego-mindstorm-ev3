@@ -6,43 +6,40 @@ import lejos.hardware.sensor.SensorMode;
 
 
 public class LightSensor {
-	EV3ColorSensor sensor;
-	SensorMode mode;
-	
-	public void connect(Port port) {
-		sensor = new EV3ColorSensor(port);
-		mode = sensor.getRedMode();
-		sensor.setFloodlight(true);
-	}
-		
-	public int[] sampleLightArray() 
-	{
-		float[] sample = new float[1];
-		int []values = new int[10];
-		
-		for(int i = 0; i < 10; i++)
-		{
-			mode.fetchSample(sample, 0);
-			values[i] = (int)(sample[0] * 100 + 0.5);
-		}
-		
-		return values;
-	}
-	
-	
-	public int sampleLight(){
-		double lightvalue=0;
-		for(int a: sampleLightArray())
-		{
-			lightvalue = lightvalue + a;
-		}
-		
-		return (int)(lightvalue / 10 + 0.5);
-	}
-	
-	public void closeLight() {
-		sensor.close();
-	}
-	
-	
+    EV3ColorSensor sensor;
+    SensorMode mode;
+
+    public void connect(Port port) {
+        sensor = new EV3ColorSensor(port);
+        mode = sensor.getRedMode();
+        sensor.setFloodlight(true);
+    }
+
+    public int[] sampleLightArray() {
+        float[] sample = new float[1];
+        int[] values = new int[10];
+
+        for (int i = 0; i < 10; i++) {
+            mode.fetchSample(sample, 0);
+            values[i] = (int) (sample[0] * 100 + 0.5);
+        }
+
+        return values;
+    }
+
+
+    public int sampleLight() {
+        double lightvalue = 0;
+        for (int a : sampleLightArray()) {
+            lightvalue = lightvalue + a;
+        }
+
+        return (int) (lightvalue / 10 + 0.5);
+    }
+
+    public void closeLight() {
+        sensor.close();
+    }
+
+
 }

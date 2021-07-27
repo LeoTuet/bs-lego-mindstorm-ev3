@@ -11,7 +11,8 @@ then
 fi
 
 printf "Running %s...\n" "$JAR"
-ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc root@$IP "jrun -jar /home/lejos/programs/$JAR"
+RESULTS=$(ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc root@$IP "jrun -jar /home/lejos/programs/$JAR")
+echo $?
 
 if [ $? -gt 0 ]
 then
@@ -20,4 +21,4 @@ then
 fi
 
 printf "Done!\n"
-exit 0
+#exit 0
