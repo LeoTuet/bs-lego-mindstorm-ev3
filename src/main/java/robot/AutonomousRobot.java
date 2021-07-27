@@ -45,7 +45,7 @@ public class AutonomousRobot extends TwoWheelRobot {
     }
 
     public void showUltraSoundSensorData() {
-        System.out.println("Ultrasoundsensor: /n" + ultrasoundSensor.sampleSonic());
+        System.out.println(ultrasoundSensor.sampleSonic());
     }
 
     private LightSensor getLightSensor() {
@@ -64,21 +64,22 @@ public class AutonomousRobot extends TwoWheelRobot {
 
     private void searchObstacle() {
         while (!obstacleDetected()){
-            turn('r', 3);
-        }
-        //adds personality
-        try {
-            Thread.sleep(1000 + (int)(Math.random() * 3000));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            turn('l', 3);
+            try {
+                Thread.sleep(700);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     private void ramObstacle() {
-        double tempSpeed = getSpeed();
-        setSpeed(3);
-        driveSafelyDist(ultrasoundSensor.sampleSonic());
-        setSpeed(tempSpeed);
+        //double tempSpeed = getSpeed();
+        //setSpeed(3);
+        while (obstacleDetected()){
+            driveSafely();
+        }
+        //setSpeed(tempSpeed);
     }
 
     private boolean endOfTableDetected() {
@@ -86,7 +87,6 @@ public class AutonomousRobot extends TwoWheelRobot {
     }
 
     private boolean obstacleDetected() {
-        // TODO: 26.07.21 use ultrasound to detect if obstacle in front
-        return false;
+        return ultrasoundSensor.sampleSonic()<=50;
     }
 }
