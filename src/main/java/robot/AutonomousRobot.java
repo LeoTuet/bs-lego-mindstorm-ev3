@@ -20,7 +20,7 @@ public class AutonomousRobot extends TwoWheelRobot {
     }
 
     public void driveSafely() {
-        while (!obstacleDetected()) {
+        while (!endOfTableDetected()) {
             drive();
         }
         brake();
