@@ -38,3 +38,6 @@ IntelliJ Projekt Vorlage für die Aufgabe ’Abräumen’ mit dem Lego Roboter (
 
 ####5.
 <img height="70%" width="70%" alt="Step5" src="https://raw.githubusercontent.com/LeoTuet/LegoRoboEV3/main/assets/images/5.png">
+
+## Die Regeln von Leo
+1. Niemand pushed auf main! (Außer Marc und Niklas)
