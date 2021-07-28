@@ -15,13 +15,13 @@ public class LightSensor {
         sensor.setFloodlight(true);
     }
 
-    public int[] sampleLightArray() {
+    public byte[] sampleLightArray() {
         float[] sample = new float[1];
-        int[] values = new int[10];
+        byte[] values = new byte[10];
 
-        for (int i = 0; i < 10; i++) {
+        for (byte i = 0; i < 10; i++) {
             mode.fetchSample(sample, 0);
-            values[i] = (int) (sample[0] * 100 + 0.5);
+            values[i] = (byte) (sample[0] * 100 + 0.5);
         }
         return values;
     }
@@ -29,7 +29,7 @@ public class LightSensor {
 
     public int sampleLight() {
         int lightvalue = 0;
-        for (int a : sampleLightArray()) {
+        for (byte a : sampleLightArray()) {
             lightvalue = lightvalue + a;
         }
         return (int) (lightvalue / 10 + 0.5);
