@@ -6,13 +6,18 @@ public class TwoWheelRobot {
 	protected double speed;
 	protected EV3Brick brick;
 	private Motor motA, motB;
-	private Port portA, portB;	
+	public LightSensor lightSensor;
+	private Port portA, portB, port3;
 
 	public TwoWheelRobot() {
 		brick = new EV3Brick();
 		motA = new Motor();	motB = new Motor();
-		portA = brick.getPort("A"); portB = brick.getPort("B");
+		portA = brick.getPort("A");
+		portB = brick.getPort("B");
+		port3 = brick.getPort("S3");
 		motA.connect(portA); motB.connect(portB);
+		lightSensor = new LightSensor();
+		lightSensor.connect(port3);
 		speed = 0.5;
 	}
 	

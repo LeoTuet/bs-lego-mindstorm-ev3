@@ -1,5 +1,7 @@
 package robot;
 
+import lejos.hardware.port.Port;
+import lejos.hardware.sensor.EV3ColorSensor;
 import robot.api.LightSensor;
 import robot.api.TwoWheelRobot;
 
@@ -16,9 +18,9 @@ public class Main {
         wheelRobot.setSpeed(-0.5);
         wheelRobot.driveDist(40);
     */
-        LightSensor lightSensor = new LightSensor();
-        lightSensor.connect(3);
-        lightSensor.sampleLight();
-
+        TwoWheelRobot wheelRobot = new TwoWheelRobot();
+        while (true){
+            System.out.println(wheelRobot.lightSensor.sampleLight());
+        }
     }
 }
