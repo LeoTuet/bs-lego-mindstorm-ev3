@@ -24,20 +24,27 @@ IntelliJ Projekt Vorlage für die Aufgabe ’Abräumen’ mit dem Lego Roboter (
 4. package bei Command Line eingeben
 5. Runnen und warten
 
-####1.
-<img height="70%" width="70%" alt="Step1" src="https://raw.githubusercontent.com/LeoTuet/LegoRoboEV3/main/assets/images/1.png">
 
-####2.
-<img height="70%" width="70%" alt="Step2" src="https://raw.githubusercontent.com/LeoTuet/LegoRoboEV3/main/assets/images/2.png">
+###Screenshot Tutorial for (Build & Deploy)
+1.
 
-####3.
-<img height="70%" width="70%" alt="Step3" src="https://raw.githubusercontent.com/LeoTuet/LegoRoboEV3/main/assets/images/3.png">
+<img height="50%" width="50%" alt="Step1" src="https://raw.githubusercontent.com/LeoTuet/LegoRoboEV3/main/assets/images/1.png">
 
-####4.
-<img height="70%" width="70%" alt="Step4" src="https://raw.githubusercontent.com/LeoTuet/LegoRoboEV3/main/assets/images/4.png">
+2.
 
-####5.
-<img height="70%" width="70%" alt="Step5" src="https://raw.githubusercontent.com/LeoTuet/LegoRoboEV3/main/assets/images/5.png">
+<img height="50%" width="50%" alt="Step2" src="https://raw.githubusercontent.com/LeoTuet/LegoRoboEV3/main/assets/images/2.png">
+
+3.
+
+<img height="50%" width="50%" alt="Step3" src="https://raw.githubusercontent.com/LeoTuet/LegoRoboEV3/main/assets/images/3.png">
+
+4.
+
+<img height="50%" width="50%" alt="Step4" src="https://raw.githubusercontent.com/LeoTuet/LegoRoboEV3/main/assets/images/4.png">
+
+5.
+
+<img height="50%" width="50%" alt="Step5" src="https://raw.githubusercontent.com/LeoTuet/LegoRoboEV3/main/assets/images/5.png">
 
 ## Die Regeln von Leo
 1. Niemand pushed auf main! (Außer Marc und Niklas)
