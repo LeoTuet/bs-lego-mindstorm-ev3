@@ -27,12 +27,12 @@ public class LightSensor {
     }
 
 
-    public int sampleLight() {
+    public byte sampleLight() {
         int lightvalue = 0;
         for (byte a : sampleLightArray()) {
             lightvalue = lightvalue + a;
         }
-        return (int) (lightvalue / 10 + 0.5);
+        return (byte) (lightvalue / 10 + 0.5);
     }
 
     public void closeLight() {
