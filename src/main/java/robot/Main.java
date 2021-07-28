@@ -20,7 +20,16 @@ public class Main {
     */
         TwoWheelRobot wheelRobot = new TwoWheelRobot();
         while (true){
-            System.out.println(wheelRobot.lightSensor.sampleLight());
+            if (wheelRobot.lightSensor.sampleLight() > 40){
+                wheelRobot.setSpeed(0.5);
+                wheelRobot.driveDist(1);
+                wheelRobot.brake();
+            } else {
+                wheelRobot.setSpeed(-0.5);
+                wheelRobot.driveDist(10);
+                wheelRobot.turn('r', 45);
+            }
+
         }
     }
 }
