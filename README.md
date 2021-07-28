@@ -26,4 +26,4 @@ IntelliJ Projekt Vorlage für die Aufgabe ’Abräumen’ mit dem Lego Roboter (
 
 
 ## Die Regeln von Leo
-1. Niemand pushed auf main! (Außer Marc)
+1. Niemand pushed auf main! (Außer Marc und Niklas)
