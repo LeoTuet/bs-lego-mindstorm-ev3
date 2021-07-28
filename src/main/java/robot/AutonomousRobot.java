@@ -20,7 +20,7 @@ public class AutonomousRobot extends TwoWheelRobot {
     }
 
     public void driveSafely() {
-        while (this.getLightSensor().sampleLight() > 10) {
+        while (!obstacleDetected()) {
             drive();
         }
         brake();
@@ -37,7 +37,7 @@ public class AutonomousRobot extends TwoWheelRobot {
     }
 
     public void driveSafely(byte sec) {
-        while (this.getLightSensor().sampleLight() > 10) {
+        while (!obstacleDetected()) {
             drive(sec);
         }
         brake();
