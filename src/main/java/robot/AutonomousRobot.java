@@ -6,12 +6,15 @@ import robot.api.UltrasoundSensor;
 
 public class AutonomousRobot extends TwoWheelRobot {
     private LightSensor lightSensor;
+    private LightSensor lightSensor2;
     private UltrasoundSensor ultrasoundSensor;
 
     public AutonomousRobot() {
         super();
         lightSensor = new LightSensor();
         lightSensor.connect(brick.getPort("S4"));
+        lightSensor2 = new LightSensor();
+        lightSensor2.connect(brick.getPort("S1"));
         ultrasoundSensor = new UltrasoundSensor();
         ultrasoundSensor.connect(brick.getPort("S3"));
     }
@@ -83,7 +86,7 @@ public class AutonomousRobot extends TwoWheelRobot {
     }
 
     private boolean endOfTableDetected() {
-        return this.getLightSensor().sampleLight() < 10;
+        return this.lightSensor.sampleLight() < 10 || this.lightSensor2.sampleLight()<10;
     }
 
     private boolean obstacleDetected() {
