@@ -6,8 +6,18 @@ import lejos.hardware.sensor.SensorMode;
 
 
 public class LightSensor {
-    EV3ColorSensor sensor;
-    SensorMode mode;
+
+    private EV3ColorSensor sensor;
+    private SensorMode mode;
+    protected EV3Brick brick;
+
+    public LightSensor(String port) {
+        brick = new EV3Brick();
+        connect(brick.getPort(port));
+    }
+
+    public LightSensor() {
+    }
 
     public void connect(Port port) {
         sensor = new EV3ColorSensor(port);
@@ -27,19 +37,16 @@ public class LightSensor {
         return values;
     }
 
-
     public int sampleLight() {
         double lightvalue = 0;
         for (int a : sampleLightArray()) {
             lightvalue = lightvalue + a;
         }
-
         return (int) (lightvalue / 10 + 0.5);
     }
 
     public void closeLight() {
         sensor.close();
     }
-
 
 }

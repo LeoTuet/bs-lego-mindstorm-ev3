@@ -3,19 +3,17 @@ package robot.api;
 import lejos.hardware.port.Port;
 
 public class TwoWheelRobot {
+
     protected double speed;
     protected EV3Brick brick;
     private Motor motA, motB;
-    private Port portA, portB;
 
     public TwoWheelRobot() {
         brick = new EV3Brick();
         motA = new Motor();
         motB = new Motor();
-        portA = brick.getPort("A");
-        portB = brick.getPort("B");
-        motA.connect(portA);
-        motB.connect(portB);
+        motA.connect(brick.getPort("A"));
+        motB.connect(brick.getPort("B"));
         speed = 0.5;
     }
 
@@ -32,10 +30,17 @@ public class TwoWheelRobot {
         return speed;
     }
 
-    // method to drive
-    public void drive() {
+    // method to drive forward
+    public void driveForward() {
         motA.start(speed);
         motB.start(speed);
+    }
+
+    // method to drive backwards
+    public void driveBackwards() {
+        double negativeSpeed = getSpeed() < 0 ? getSpeed() : getSpeed() * -1;
+        motA.start(negativeSpeed);
+        motB.start(negativeSpeed);
     }
 
     // method to stop
@@ -44,18 +49,31 @@ public class TwoWheelRobot {
         motB.stop();
     }
 
-    // method to drive a specific time
-    public void drive(double sek) {
-        drive();
+    // method to drive forward a specific time
+    public void driveForward(double sek) {
+        driveForward();
         Helper.delayProgramm(sek);
         brake();
     }
 
+    // method to drive backwards a specific time
+    public void driveBackwards(double sek) {
+        driveForward();
+        Helper.delayProgramm(sek);
+        brake();
+    }
+
+
     // method to drive a specific length
     public void driveDist(double cm) {
+        boolean isNegative = String.valueOf(cm).contains("-");
         double weelRotations = Helper.getRotations(cm);
         double driveTime = weelRotations / Math.abs(speed);
-        drive(driveTime);
+        if (isNegative) {
+            driveBackwards(driveTime);
+        } else {
+            driveForward(driveTime);
+        }
     }
 
     // method to rotate use 'l' for left or 'r' for right and the degree as an int

@@ -4,6 +4,7 @@ import lejos.hardware.motor.EV3LargeRegulatedMotor;
 import lejos.hardware.port.Port;
 
 public class Motor {
+
     private EV3LargeRegulatedMotor mot;
 
     public void connect(Port port) {
@@ -23,4 +24,5 @@ public class Motor {
     public void stop() {
         mot.stop(true);
     }
+
 }

@@ -7,9 +7,17 @@ import lejos.robotics.SampleProvider;
 
 public class UltrasoundSensor {
 
-    private Port port;
     private EV3UltrasonicSensor sensor;
     private SampleProvider sp;
+    protected EV3Brick brick;
+
+    public UltrasoundSensor(String port) {
+        brick = new EV3Brick();
+        connect(brick.getPort(port));
+    }
+
+    public UltrasoundSensor() {
+    }
 
     public void connect(Port port) {
         sensor = new EV3UltrasonicSensor(port);
@@ -26,16 +34,15 @@ public class UltrasoundSensor {
     public int[] sampleSonicArray() {
         float[] sample = new float[1];
         int[] values = new int[10];
-
         for (int i = 0; i < 10; i++) {
             sp.fetchSample(sample, 0);
             values[i] = (int) (sample[0] * 100 + 0.5);
         }
-
         return values;
     }
 
     public void closeSonic() {
         sensor.close();
     }
+
 }

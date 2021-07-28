@@ -11,14 +11,14 @@ then
 fi
 
 printf "Running %s...\n" "$JAR"
-RESULTS=$(ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc root@$IP "jrun -jar /home/lejos/programs/$JAR")
-echo $?
+ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc root@$IP "jrun -jar /home/lejos/programs/$JAR"
 
 if [ $? -gt 0 ]
 then
   echo -e "\e[31mRun failed\e[0m"
-  exit 1
+  #exit 1
 fi
 
 printf "Done!\n"
+$SHELL
 #exit 0

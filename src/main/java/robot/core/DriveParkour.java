@@ -1,4 +1,4 @@
-package robot.scripts;
+package robot.core;
 
 import robot.api.TwoWheelRobot;
 
@@ -17,4 +17,5 @@ public class DriveParkour {
         wheelRobot.setSpeed(-1);
         wheelRobot.driveDist(40);
     }
+
 }

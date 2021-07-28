@@ -1,12 +1,12 @@
 package robot;
 
-import robot.scripts.AutomDrive;
+import robot.core.AutomDrive;
 
 public class Main {
 
     public static void main(String[] args) {
         AutomDrive automDrive = new AutomDrive();
-        automDrive.drive();
+        automDrive.autoDrive();
     }
 
 }
