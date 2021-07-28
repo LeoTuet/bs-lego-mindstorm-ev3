@@ -10,6 +10,7 @@ IntelliJ Projekt Vorlage für die Aufgabe ’Abräumen’ mit dem LEGO MINDSTORM
 - Projekt clonen und IntelliJ das Maven Projekt laden lassen
 - in ip.txt die IP-Adresse des Bricks eingeben
 - Code ist unter src/main/java/robot/Main.java
+- API für Sensoren unter src/main/java/robot/api
 
 ## Deploy
 
@@ -41,5 +42,5 @@ IntelliJ Projekt Vorlage für die Aufgabe ’Abräumen’ mit dem LEGO MINDSTORM
 <img height="50%" width="50%" alt="Step5" src="https://raw.githubusercontent.com/LeoTuet/LegoRoboEV3/main/assets/images/5.png">
 
 
-## Die Regeln von Leo
+## Die Regeln
 1. Niemand pushed auf main! (Außer Marc und Niklas)
