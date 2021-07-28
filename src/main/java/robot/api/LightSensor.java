@@ -28,7 +28,7 @@ public class LightSensor {
 
 
     public int sampleLight() {
-        double lightvalue = 0;
+        int lightvalue = 0;
         for (int a : sampleLightArray()) {
             lightvalue = lightvalue + a;
         }

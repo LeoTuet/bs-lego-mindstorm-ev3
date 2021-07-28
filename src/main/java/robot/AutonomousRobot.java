@@ -23,8 +23,8 @@ public class AutonomousRobot extends TwoWheelRobot {
         brake();
     }
 
-    public void driveSafelyDist(double cm) {
-        for(int i = 0; i < cm; i++){
+    public void driveSafelyDist(byte cm) {
+        for(byte i = 0; i < cm; i++){
             if(this.getLightSensor().sampleLight() <= 10){
                 break;
             }
@@ -33,7 +33,7 @@ public class AutonomousRobot extends TwoWheelRobot {
         brake();
     }
 
-    public void driveSafely(double sec) {
+    public void driveSafely(byte sec) {
         while (this.getLightSensor().sampleLight() > 10) {
             drive(sec);
         }
