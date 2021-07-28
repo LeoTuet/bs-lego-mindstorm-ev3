@@ -59,6 +59,9 @@ public class AutonomousRobot extends TwoWheelRobot {
         while (true) {
             if (obstacleDetected()) {
                 ramObstacle();
+                setSpeed(getSpeed()*-1);
+                driveSafelyDist((byte) 5);
+                setSpeed(getSpeed()*-1);
             } else {
                 searchObstacle();
             }
