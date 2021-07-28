@@ -23,6 +23,7 @@ public class AutonomousRobot extends TwoWheelRobot {
         while (!endOfTableDetected()) {
             drive();
         }
+
         brake();
     }
 
@@ -60,7 +61,7 @@ public class AutonomousRobot extends TwoWheelRobot {
             if (obstacleDetected()) {
                 ramObstacle();
                 setSpeed(getSpeed()*-1);
-                driveSafelyDist((byte) 5);
+                driveDist(5);
                 setSpeed(getSpeed()*-1);
             } else {
                 searchObstacle();
