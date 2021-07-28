@@ -1,7 +1,5 @@
 package robot.api;
 
-import lejos.hardware.port.Port;
-
 public class TwoWheelRobot {
 
     protected double speed;
@@ -12,7 +10,7 @@ public class TwoWheelRobot {
         brick = new EV3Brick();
         motA = new Motor();
         motB = new Motor();
-        motA.connect(brick.getPort("A"));
+        motA.connect(brick.getPort("C"));
         motB.connect(brick.getPort("B"));
         speed = 0.5;
     }
@@ -58,7 +56,7 @@ public class TwoWheelRobot {
 
     // method to drive backwards a specific time
     public void driveBackwards(double sek) {
-        driveForward();
+        driveBackwards();
         Helper.delayProgramm(sek);
         brake();
     }

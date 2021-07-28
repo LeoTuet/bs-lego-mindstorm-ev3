@@ -12,7 +12,7 @@ public class LightSensor {
     protected EV3Brick brick;
 
     public LightSensor(String port) {
-        brick = new EV3Brick();
+        brick = new EV3Brick(); // TODO wtf leo
         connect(brick.getPort(port));
     }
 

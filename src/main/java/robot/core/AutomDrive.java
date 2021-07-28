@@ -11,51 +11,63 @@ import java.util.Random;
 public class AutomDrive {
 
     TwoWheelRobot wheelRobot;
-    LightSensor lightSensor;
-    TouchSensor touchSensor;
+    LightSensor lightSensorRight, lightSensorLeft;
+    BetterTouchSensor touchSensor;
     UltrasoundSensor ultrasoundSensor;
     Random random;
 
     public AutomDrive() {
         wheelRobot = new TwoWheelRobot();
-        touchSensor = new TouchSensor("S1");
+        touchSensor = new BetterTouchSensor("S4");
         ultrasoundSensor = new UltrasoundSensor("S2");
-        lightSensor = new LightSensor("S3");
+        lightSensorRight = new LightSensor("S3");
+        lightSensorLeft = new LightSensor("S1");
     }
 
     public void startStop() {
         autoDrive();
-        touchSensor.setTouched(false);
-        startAutoDrive();
     }
 
     public void startAutoDrive() {
-        while (!touchSensor.sampleTouch()) {
+        while (!touchSensor.wasReTouched()) {
+
         }
+        System.out.println("exited waiting for start");
         autoDrive();
     }
 
     public void autoDrive() {
-        while (!touchSensor.sampleTouch()) {
+        while (!touchSensor.wasReTouched()) {
+            findCube();
             driveSave();
-            wheelRobot.driveDist(-10);
-            randomTurn();
             autoDrive();
         }
+        System.out.println("exited movement");
+        startAutoDrive();
     }
 
     public void driveSave() {
-        while (lightSensor.sampleLight() >= 10) {
+        while (lightSensorRight.sampleLight() >= 10 && lightSensorLeft.sampleLight() >= 10) {
             wheelRobot.driveForward();
-            System.out.println("test");
         }
         wheelRobot.brake();
+        wheelRobot.driveBackwards(2);
     }
 
     public void randomTurn() {
         random = new Random();
         String leftOrRight = "rl";
         wheelRobot.turn(leftOrRight.charAt(random.nextInt(leftOrRight.length())), 92 + random.nextInt(180));
+    }
+
+    public boolean detectCube() {
+        return ultrasoundSensor.sampleSonic() <= 50;
+    }
+
+    public void findCube() {
+        while (!detectCube()) {
+            wheelRobot.turn('r', 5);
+        }
     }
 
 }

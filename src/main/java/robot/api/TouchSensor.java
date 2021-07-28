@@ -40,6 +40,10 @@ public class TouchSensor {
         this.isTouched = isTouched;
     }
 
+    public boolean getTouched() {
+        return this.isTouched;
+    }
+
     public void closeTouch() {
         sensor.close();
     }
