@@ -16,10 +16,10 @@ public class UltrasoundSensor {
 			sp = sensor.getMode("Distance");
 		}
 		
-		public int sampleSonic (){
+		public short sampleSonic (){
 			float[] sample = new float[sp.sampleSize()];
 			sp.fetchSample(sample, 0);
-			int dist = (int)(sample[0] * 100 + 0.5);
+			short dist = (short)(sample[0] * 100 + 0.5);
 			return (dist);
 	    }
 		
